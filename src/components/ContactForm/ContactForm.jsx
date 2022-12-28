@@ -1,4 +1,4 @@
-import styles from './ContactForm.module.css';
+import css from './ContactForm.module.css';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
@@ -25,11 +25,11 @@ export const ContactForm = () => {
 
   return (
     <Form className="border rounded p-4" onSubmit={handleSubmit}>
-      <p className={styles.paragraph}>Enter Contact</p>
+      <p className={css.paragraph}>Enter Contact</p>
       <Form.Group className="mb-3" controlId="inputName">
         <Form.Label>Name</Form.Label>
         <Form.Control
-          className={styles.input}
+          className={css.input}
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -40,7 +40,7 @@ export const ContactForm = () => {
       <Form.Group className="mb-3" controlId="inputNumber">
         <Form.Label>Number</Form.Label>
         <Form.Control
-          className={styles.input}
+          className={css.input}
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -48,7 +48,9 @@ export const ContactForm = () => {
           required
         />
       </Form.Group>
-      <Button type="submit">Add Contact</Button>
+      <Button type="submit" variant="success">
+        Add Contact
+      </Button>
     </Form>
   );
 };

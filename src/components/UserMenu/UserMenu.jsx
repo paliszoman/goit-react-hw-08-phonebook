@@ -21,7 +21,7 @@ export const UserMenu = () => {
 
   return (
     <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
-      <Button variant="secondary">Welcome '{user.name}'</Button>
+      <Button variant="success">Welcome '{user.name}'</Button>
     </OverlayTrigger>
   );
 };

@@ -1,4 +1,4 @@
-import styles from './RegisterForm.module.css';
+import css from './RegisterForm.module.css';
 import { Form, Button, Container } from 'react-bootstrap';
 import { register } from 'redux/auth/operations';
 import { useDispatch } from 'react-redux';
@@ -23,13 +23,13 @@ export const RegisterForm = () => {
   };
 
   return (
-    <Container className={styles.container}>
+    <Container className={css.container}>
       <Form className="border rounded p-4" onSubmit={handleSubmit}>
-        <p className={styles.paragraph}>Register account</p>
+        <p className={css.paragraph}>Register account</p>
         <Form.Group className="mb-3" controlId="inputName">
           <Form.Label>Username</Form.Label>
           <Form.Control
-            className={styles.input}
+            className={css.input}
             type="name"
             name="name"
             title="For example: John Doe"
@@ -39,7 +39,7 @@ export const RegisterForm = () => {
         <Form.Group className="mb-3" controlId="inputEmail">
           <Form.Label>E-mail</Form.Label>
           <Form.Control
-            className={styles.input}
+            className={css.input}
             type="email"
             name="email"
             title="For example: example@email.com"
@@ -49,7 +49,7 @@ export const RegisterForm = () => {
         <Form.Group className="mb-3" controlId="inputPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            className={styles.input}
+            className={css.input}
             type="password"
             name="password"
             title="Minimum 4 characters"
@@ -57,7 +57,9 @@ export const RegisterForm = () => {
             required
           />
         </Form.Group>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" variant="success">
+          Submit
+        </Button>
       </Form>
     </Container>
   );

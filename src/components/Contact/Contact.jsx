@@ -1,4 +1,4 @@
-import styles from './Contact.module.css';
+import css from './Contact.module.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
@@ -11,17 +11,17 @@ export const Contact = ({ contact }) => {
 
   return (
     <>
-      <span className="me-2">
+      <span className={css.contact}>
         {contact.name}: {contact.number}
+        <Button
+          type="button"
+          className={css.btn}
+          variant="outline-danger"
+          onClick={handleDelete}
+        >
+          x
+        </Button>
       </span>
-      <Button
-        type="button"
-        className={styles.btn}
-        variant="outline-primary"
-        onClick={handleDelete}
-      >
-        Delete
-      </Button>
     </>
   );
 };
